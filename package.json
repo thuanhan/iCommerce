@@ -5,11 +5,12 @@
   "description": "Ecommerce website",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules --experimental-specifier-resolution=node backend/server.js"
   },
   "author": "Thuan Han",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
