@@ -1,5 +1,5 @@
-import createHttpError from "../helpers/httpError";
-import createHttpSuccess from "../helpers/httpSuccess";
+import createHttpError from "../../../helpers/httpError";
+import createHttpSuccess from "../../../helpers/httpSuccess";
 import Product from "../models/productModel";
 
 export default function createProductsEndpointHandler({ productModel }) {

@@ -1,0 +1,24 @@
+{
+  "name": "products-service",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Products service",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch src --exec node --experimental-modules --experimental-specifier-resolution=node src/index.js",
+    "test": "NODE_OPTIONS='--experimental-vm-modules --experimental-specifier-resolution=node' jest --watchAll"
+  },
+  "author": "Thuan Han",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.4"
+  }
+}

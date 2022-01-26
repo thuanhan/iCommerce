@@ -2,7 +2,7 @@ import {
   UniqueConstraintError,
   InvalidPropertyError,
   RequiredParameterError,
-} from "../helpers/errors";
+} from "./errors";
 
 export default function createHttpError({ statusCode, errorMessage }) {
   if (arguments[0] instanceof Error) {
