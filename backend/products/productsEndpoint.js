@@ -1,11 +1,12 @@
 import createHttpError from "../helpers/httpError";
 import createHttpSuccess from "../helpers/httpSuccess";
+import Product from "../models/productModel";
 
 export default function createProductsEndpointHandler({ productModel }) {
   return async function handle(httpRequest) {
     switch (httpRequest.method) {
-      // case 'POST':
-      //   return postContact(httpRequest)
+      case "POST":
+        return postProduct(httpRequest);
 
       case "GET":
         return getProducts(httpRequest);
@@ -27,5 +28,42 @@ export default function createProductsEndpointHandler({ productModel }) {
     return createHttpSuccess({
       result,
     });
+  }
+
+  async function postProduct(httpRequest) {
+    let productInfo = httpRequest.body;
+    if (!productInfo) {
+      return createHttpError({
+        statusCode: 400,
+        errorMessage: "Bad request. No POST body.",
+      });
+    }
+
+    if (typeof httpRequest.body === "string") {
+      try {
+        productInfo = JSON.parse(productInfo);
+      } catch {
+        return createHttpError({
+          statusCode: 400,
+          errorMessage: "Bad request. POST body must be valid JSON.",
+        });
+      }
+    }
+
+    try {
+      const product = new Product({
+        ...productInfo,
+      });
+      const result = await product.save();
+      return {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        statusCode: 201,
+        data: JSON.stringify(result),
+      };
+    } catch (e) {
+      return createHttpError(e);
+    }
   }
 }

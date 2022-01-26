@@ -5,7 +5,8 @@
   "description": "Ecommerce website",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch backend --exec node --experimental-modules --experimental-specifier-resolution=node backend/server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules --experimental-specifier-resolution=node backend/server.js",
+    "test": "NODE_OPTIONS='--experimental-vm-modules --experimental-specifier-resolution=node' jest --watchAll"
   },
   "author": "Thuan Han",
   "dependencies": {
@@ -20,6 +21,7 @@
   "devDependencies": {
     "eslint": "^7.9.0",
     "eslint-plugin-react": "^7.21.2",
+    "jest": "^27.4.7",
     "nodemon": "^2.0.4"
   }
 }
