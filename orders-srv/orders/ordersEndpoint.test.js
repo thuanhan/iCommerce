@@ -1,6 +1,6 @@
-import handle from "./products";
+import handle from ".";
 
-describe("Products Endpoint", () => {
+describe("Orders Endpoint", () => {
   it("Method NOT allow", async () => {
     const result = await handle({
       method: "VIEW",

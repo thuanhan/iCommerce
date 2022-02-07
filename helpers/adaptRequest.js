@@ -7,7 +7,7 @@ export default function createAdaptRequest(req = {}) {
     path: req.path,
     method: req.method,
     pathParams: req.params,
-    queryParams: req.queryParams,
+    queryParams: req.query,
     body: req.body,
   });
 }

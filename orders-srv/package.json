@@ -1,12 +1,12 @@
 {
-  "name": "products-service",
+  "name": "orders-service",
   "type": "module",
   "version": "1.0.0",
-  "description": "Products service",
+  "description": "Orders service",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch ./ --exec node --experimental-modules --experimental-specifier-resolution=node ./index.js",
-    "test": "NODE_OPTIONS='--experimental-vm-modules --experimental-specifier-resolution=node' jest --detectOpenHandles --forceExit"
+    "test": "NODE_OPTIONS='--experimental-vm-modules --experimental-specifier-resolution=node' jest --watchAll"
   },
   "author": "Thuan Han",
   "dependencies": {

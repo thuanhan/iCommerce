@@ -1,4 +1,4 @@
-import handle from "./index";
+import handle from ".";
 
 describe("Products Endpoint", () => {
   it("Method NOT allow", async () => {
