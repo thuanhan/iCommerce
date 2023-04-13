@@ -1,4 +1,4 @@
-# iCommerce website
+# iCommerce website that apply Clean Architect
 
 ## High level diagram
 An Event Driven Architect with RabbitMQ. There are 2 microservices (Product & Order) with have own Database
